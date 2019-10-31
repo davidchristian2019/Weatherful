@@ -10,7 +10,10 @@ var currentMinutes = ( minute < 10 ? "0" : "" ) + minute;
 var dateInformation=month+ "/" + day + "/" + year+" "+hour+":"+currentMinutes;
 var weatherApiUrl = "https://api.openweathermap.org/data/2.5/weather";
 var apiKey = "8d56337917956b6778c739bc4015b10a"; //get your own API keys
-
+function initialize() {
+  var input = document.getElementById('city-input');
+  new google.maps.places.Autocomplete(input);
+};
 getLocation();
 
 document.getElementById("btn-choice").addEventListener("click", function() {

@@ -1,102 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/main.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-      integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-      crossorigin="anonymous"
-    ></script>
-    <title>Weatherful</title>
-  </head>
 
-  <body id="bg-img">
-    <main id="home">
-      <h1 class="lg-heading">
-        Weatherful
-        <span class="text-secondary">Life</span>
-      </h1>
-      <h2 class="sm-heading">
-        Wherever you go, no matter what the weather, always bring your own sunshine to your wonderful life
-      </h2>
-      
-      <div class="about-info">
-        <div id="wheater-video">
-          <video autoplay muted loop id="myVideo">
-            <source src="videos/clearDay.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div class="bio-image">
-          <h2>Search for city weather information:</h2>
-          <div class="form-group">
-            <input
-            type="text"
-            class="form-control"
-            id="city-input"
-            placeholder="City name"
-          />
-          <button
-            id="btn-choice"
-            type="button"
-            class="btn btn-primary btn-lg"
-          >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/main.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtDz7z2aWpUDE6fsfrdfPi227mnFjjAiA&libraries=places&callback=initialize"
+    async defer></script>
+  <title>Weatherful</title>
+</head>
+
+<body id="bg-img">
+  <main id="home">
+    <h1 class="lg-heading">
+      Weatherful
+      <span class="text-secondary">Life</span>
+    </h1>
+    <h2 class="sm-heading">
+      Wherever you go, no matter what the weather, always bring your own sunshine to your wonderful life
+    </h2>
+
+    <div class="about-info">
+      <div id="wheater-video">
+        <video autoplay muted loop id="myVideo">
+          <source src="videos/clearDay.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="bio-image">
+        <h2>Search for city weather information:</h2>
+        <div class="form-group">
+          <input type="text" class="form-control" id="city-input" placeholder="City name" />
+          <button id="btn-choice" type="button" class="btn btn-primary btn-lg">
             Check
           </button>
         </div>
-        </div>
-        <div class="bio">
-          <h3 class="text-secondary">Check your local weather information</h3>
-          <p>You will automatically get your local weather information including weather description, local temperature and wind speed</p>
-          <h3 class="text-secondary">Check city weather information</h3>
-          <p>By typing valid city name, you will get city weather information including weather description, temperature and wind speed  </p>
-        </div>
-
-        <div class="job job-1">
-          <h3>Weather Information</h3>
-          <h4 id="wheat-info">Weather information is not available, please check your internet connection.</h4>
-        </div>
-
-        <div class="job job-2">
-          <h3>Temperature Information</h3>
-          <h4 id="temp-info">
-            Temperature information is not available, please check your internet connection.
-          </h4>
-        </div>
-
-        <div class="job job-3">
-          <h3>City information</h3>
-          <h4 id="city-info">
-            City information is not available, please check your internet connection.
-          </h4>
-        </div>
       </div>
-    </main>
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/main.js"></script>
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyD06pquWXnhgoZAWCnBvaVJdrr7RJlKXAo"></script>
-  </body>
+      <div class="bio">
+        <h3 class="text-secondary">Check your local weather information</h3>
+        <p>You will automatically get your local weather information including weather description, local temperature
+          and wind speed</p>
+        <h3 class="text-secondary">Check city weather information</h3>
+        <p>By typing valid city name, you will get city weather information including weather description, temperature
+          and wind speed </p>
+      </div>
+
+      <div class="job job-1">
+        <h3>Weather Information</h3>
+        <h4 id="wheat-info">Weather information is not available, please check your internet connection.</h4>
+      </div>
+
+      <div class="job job-2">
+        <h3>Temperature Information</h3>
+        <h4 id="temp-info">
+          Temperature information is not available, please check your internet connection.
+        </h4>
+      </div>
+
+      <div class="job job-3">
+        <h3>City information</h3>
+        <h4 id="city-info">
+          City information is not available, please check your internet connection.
+        </h4>
+      </div>
+    </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
 </html>
